@@ -34,8 +34,8 @@ class MyTestCase(unittest.TestCase):
         self.assertFalse(self.acc.withdraw(-200))
         self.assertEqual(self.acc._Account__account_balance, 100)
         #withdrwaing within the limit
-        self.assertFalse(self.acc.withdraw(-20))
-        self.assertEqual(self.acc._Account__account_balance, 100)
+        self.assertTrue(self.acc.withdraw(20))
+        self.assertEqual(self.acc._Account__account_balance, 80)
 
 
 if __name__ == '__main__':
